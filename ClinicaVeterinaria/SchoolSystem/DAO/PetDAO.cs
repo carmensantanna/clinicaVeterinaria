@@ -250,7 +250,7 @@ namespace TI_ClinicaVeterinaria
                 //Monta a query
                 comando.CommandText = "SELECT p.ID, p.nome, p.peso, p.altura, p.idAnimal, p.idCliente, a.tipo " +
                                       "FROM pet p, animal a " +
-                                      "WHERE p.ID = @ID and p.idAnimal = a.ID";
+                                      "WHERE p.idCliente = @ID and p.idAnimal = a.ID";
 
                 //Substitui os parâmetros da query, com cada atributo utilizado
                 comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = idCliente;
