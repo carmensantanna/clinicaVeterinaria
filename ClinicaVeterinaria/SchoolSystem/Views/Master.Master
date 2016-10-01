@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="Master.master.cs" Inherits="TI_ClinicaVeterinaria.Master" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Clínica Veterinária</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        var jq = jQuery.noConflict();
+        jq(document).ready((function () {
+            jq('tbody tr:odd').addClass('odd');
+        }));
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frmMaster" runat="server">
+
+        <div id="main">
+
+            <div class="header">
+                <a href="Default.aspx" title="Clinica Veterinaria">
+                    <img src="../images/logo.png" alt="Clinica Veterinaria" /></a>
+            </div>
+            <!-- /header -->
+
+            <div class="navSide radius">
+
+                <ul>
+                    <li><a href="~/PesquisaCliente.aspx" title="Ir para paginal Inicial" runat="server">Inicial</a></li>
+                    <li>Clientes
+                        <ul class="itens">
+                            <li><a href="~/Views/Clientes.aspx" title="Cadastrar novo Cliente" runat="server">Cadastrar novo Cliente</a></li>
+                            <li><a href="~/Views/PesquisaCliente.aspx" title="Pesquisar Cliente" runat="server">Pesaquisar Cliente</a></li>
+                        </ul>
+                    </li>
+                    <br />
+                    <li>Pets
+                        <ul class="itens">
+                            <li><a id="A1" href="~/Views/IncluirPet.aspx" title="Cadastrar novo Pet" runat="server">Cadastrar novo Pet</a></li>
+                            <li><a id="A2" href="~/Views/PesquisaPet.aspx" title="Pesquisar Pet" runat="server">Pesaquisar Pets</a></li>
+                        </ul>
+                    </li>
+                    <br />
+                    <li>Consulta
+                        <ul class="itens">
+                            <li><a id="A3" href="~/Views/IncluirConsulta.aspx" title="Agendar Consulta" runat="server">Agendar consulta</a></li>
+                        </ul>
+                    </li>
+                    <br />
+                    <li>Venda
+                        <ul class="itens">
+                            <li><a id="A5" href="~/Views/NovaVenda.aspx" title="Nova Venda" runat="server">Nova Venda</a></li>
+                        </ul>
+                    </li>
+                    <li>Consultar<ul class="itens">
+                            <li><a id="A4" href="~/Views/Consultar.aspx" title="Consultar" runat="server">Realizar Consulta</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /navSide -->
+
+            <div id="content" class="radius">
+                <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- /Content -->
+
+            <div class="footer">
+            </div>
+            <!-- /footer -->
+
+        </div>
+        <!-- /Main -->
+
+    </form>
+</body>
+</html>

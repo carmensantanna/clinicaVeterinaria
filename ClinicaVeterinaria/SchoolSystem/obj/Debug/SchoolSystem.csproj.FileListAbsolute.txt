@@ -1,0 +1,12 @@
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\SchoolSystem.dll.config
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\SchoolSystem.dll
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\SchoolSystem.pdb
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.dll
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\MySql.Data.dll
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.xml
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.csprojResolveAssemblyReference.cache
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.dll
+C:\Users\Braulley\Documents\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.pdb
