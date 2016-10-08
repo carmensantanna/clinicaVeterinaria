@@ -22,7 +22,7 @@
             </li>
             <li>
                 <asp:Label ID="Label7" runat="server" Text="Data de Nascimento"></asp:Label>
-                <asp:TextBox ID="dtnasc_txt" CssClass="radiusInput" runat="server"></asp:TextBox>
+                <asp:TextBox ID="dtnasc_txt" CssClass="radiusInput" runat="server" OnTextChanged="dtnasc_txt_TextChanged"></asp:TextBox>
             </li>
             <li>
                 <asp:Label ID="Label8" runat="server" Text="Email"></asp:Label>

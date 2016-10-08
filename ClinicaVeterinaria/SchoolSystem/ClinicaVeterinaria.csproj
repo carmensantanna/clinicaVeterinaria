@@ -186,6 +186,7 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Views\CadastrarProduto.aspx" />
     <Content Include="Views\Clientes.aspx" />
     <Content Include="Views\Consultar.aspx" />
     <Content Include="Views\EditarClientes.aspx" />
@@ -203,6 +204,14 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Estoque.cs" />
+    <Compile Include="Views\CadastrarProduto.aspx.cs">
+      <DependentUpon>CadastrarProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CadastrarProduto.aspx.designer.cs">
+      <DependentUpon>CadastrarProduto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Clientes.aspx.cs">
       <DependentUpon>Clientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

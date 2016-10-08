@@ -63,5 +63,10 @@ namespace TI_ClinicaVeterinaria
              cc.Insert(c);
             
          }
+
+        protected void dtnasc_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

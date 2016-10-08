@@ -11,6 +11,7 @@ namespace TI_ClinicaVeterinaria
         private int codProduto;
         private string nomeProduto;
         private double valor;
+        private Estoque estoque;
         private static int ultimoCod;
 
         public Produto()
@@ -51,6 +52,10 @@ namespace TI_ClinicaVeterinaria
             get { return valor; }
             set { valor = value; }
         }
-
+        public Estoque Estoque
+        {
+            get { return estoque; }
+            set { estoque = value; }
+        }
     }
 }
