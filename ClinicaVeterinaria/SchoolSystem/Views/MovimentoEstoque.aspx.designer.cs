@@ -10,7 +10,7 @@
 namespace TI_ClinicaVeterinaria {
     
     
-    public partial class CadastrarProduto {
+    public partial class MovimentoEstoque {
         
         /// <summary>
         /// pnlUpdate control.
@@ -31,13 +31,31 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label6;
         
         /// <summary>
-        /// id_prod control.
+        /// idpd_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox id_prod;
+        protected global::System.Web.UI.WebControls.TextBox idpd_txt;
+        
+        /// <summary>
+        /// label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label1;
+        
+        /// <summary>
+        /// ddl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl;
         
         /// <summary>
         /// label4 control.
@@ -49,57 +67,21 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label4;
         
         /// <summary>
-        /// nome_prod control.
+        /// qtd_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nome_prod;
+        protected global::System.Web.UI.WebControls.TextBox qtd_txt;
         
         /// <summary>
-        /// Label5 control.
+        /// Confirmar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
-        /// valor_prod control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox valor_prod;
-        
-        /// <summary>
-        /// IdQtd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IdQtd;
-        
-        /// <summary>
-        /// quant_prod control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quant_prod;
-        
-        /// <summary>
-        /// bntAdd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bntAdd;
+        protected global::System.Web.UI.WebControls.Button Confirmar;
     }
 }

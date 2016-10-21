@@ -88,7 +88,11 @@ body {
     color:#295FB1;
 }
 
-
+.controle li {
+    text-align: center;
+    display:block;
+    margin-bottom:30px;
+}
 /*end sidebar*/
 /*begin content*/
 #content {
@@ -214,7 +218,9 @@ fieldset #rlbTypeSearch li {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-
+.centro {
+    text-align:center;
+}
 .btnAdd {
     background: #F5F5F5 url(../images/save.png) no-repeat left 2px;
 }

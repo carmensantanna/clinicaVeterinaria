@@ -59,6 +59,11 @@
                             <li><a id="A4" href="~/Views/Consultar.aspx" title="Consultar" runat="server">Realizar Consulta</a></li>
                         </ul>
                     </li>
+                    <li>Produto<ul class="itens">                              
+                        <li><a id="A6" href="~/Views/MovimentoEstoque.aspx" title="Movimentar Estoque" runat="server">Movimentar Estoque</a></li>
+                            <li><a id="A7" href="~/Views/CadastrarProduto.aspx" title="Cadastrar Produtos" runat="server">Cadastrar Produtos</a></li>
+                        </ul>                       
+                    </li>
                 </ul>
 
             </div>

@@ -198,13 +198,14 @@
     <Content Include="images\search.png" />
     <Content Include="Views\IncluirConsulta.aspx" />
     <Content Include="Views\IncluirPet.aspx" />
+    <Content Include="Views\MovimentoEstoque.aspx" />
     <Content Include="Views\NovaVenda.aspx" />
     <Content Include="Views\PesquisaCliente.aspx" />
     <Content Include="Views\PesquisaPet.aspx" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Estoque.cs" />
+    <Compile Include="DAO\EstoqueDAO.cs" />
     <Compile Include="Views\CadastrarProduto.aspx.cs">
       <DependentUpon>CadastrarProduto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,6 +298,13 @@
     <Compile Include="Models\Venda.cs" />
     <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Models\Veterinario.cs" />
+    <Compile Include="Views\MovimentoEstoque.aspx.cs">
+      <DependentUpon>MovimentoEstoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MovimentoEstoque.aspx.designer.cs">
+      <DependentUpon>MovimentoEstoque.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\NovaVenda.aspx.cs">
       <DependentUpon>NovaVenda.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -9,9 +9,9 @@ namespace TI_ClinicaVeterinaria
     class Produto
     {
         private int codProduto;
-        private string nomeProduto;
+        private string nome;
         private double valor;
-        private Estoque estoque;
+        private double estoque;
         private static int ultimoCod;
 
         public Produto()
@@ -20,31 +20,31 @@ namespace TI_ClinicaVeterinaria
             Init(0, "", 0);
         }
 
-        public Produto(int codProduto, string nomeProduto, int valor)
+        public Produto(int codProduto, string nome, int valor)
         {
-            Init(codProduto, nomeProduto, valor);
+            Init(codProduto, nome, valor);
         }
 
-        private void Init(int codProduto, string nomeProduto, double valor)
+        private void Init(int codProduto, string nome, double valor)
         {
             if (codProduto == 0)
                 this.codProduto = ultimoCod++;
 
-            this.nomeProduto = nomeProduto;
+            this.nome = nome;
             this.codProduto = codProduto;
             this.valor = valor;
         }
 
-        public int CodigoProduto
+        public int Codigo
         {
             get { return codProduto; }
             set { codProduto = value; }
         }
 
-        public string NomeProduto
+        public string Nome
         {
-            get { return nomeProduto; }
-            set { nomeProduto = value; }
+            get { return nome; }
+            set { nome = value; }
         }
 
         public double Valor
@@ -52,10 +52,15 @@ namespace TI_ClinicaVeterinaria
             get { return valor; }
             set { valor = value; }
         }
-        public Estoque Estoque
+        public double Estoque
         {
             get { return estoque; }
-            set { estoque = value; }
+            set {
+                if (value >= 0)
+                    estoque = value;
+                else
+                    estoque = 0;
+                }
         }
     }
 }

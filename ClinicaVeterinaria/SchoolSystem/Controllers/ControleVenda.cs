@@ -32,7 +32,7 @@ namespace TI_ClinicaVeterinaria
         }
         public void InserirProduto(Produto produto, int quantidade, int codVenda)
         {
-            ItemVenda item = new ItemVenda(codVenda,produto.CodigoProduto,quantidade,produto.Valor,quantidade*produto.Valor);
+            ItemVenda item = new ItemVenda(codVenda,produto.Codigo,quantidade,produto.Valor,quantidade*produto.Valor);
             itens.Add(item);
             venda.ValorTotal += item.ValorTotal;
         }
