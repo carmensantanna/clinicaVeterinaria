@@ -35,7 +35,7 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;               
                 //Monta a query
-                comando.CommandText = "SELECT c.ID, c.idCliente, c.idPet, c.idHorarios, c.receita, c.prontuario, c.veterinario " +
+                comando.CommandText = "SELECT c.ID, c.idCliente, c.idPet, c.idHorarios, c.receita, c.prontuario " +
                             "FROM Consulta c " +
                             "WHERE c.ID = @ID";
 
@@ -67,6 +67,62 @@ namespace TI_ClinicaVeterinaria
 
             //retorna o objeto endereço preenchido
             return consulta;
+        }
+
+        public List<Consulta> GetVeterinatio(int idVeterinario)
+        {
+            List<Consulta> consultas = new List<Consulta>();
+            //Objeto Mysql que é retornado na consulta
+            MySqlDataReader reader;
+            HorariosDAO horariosDAO = new HorariosDAO(conexaoBD);
+            ClienteDAO clienteDAO = new ClienteDAO(conexaoBD);
+            PetDAO petDAO = new PetDAO(conexaoBD);
+
+            //Cria um objeto 'comando' para manipular a query e a execução
+            using (MySqlCommand comando = conexaoBD.buscar().CreateCommand()) //conexaoBD.buscar() inicia a conexão ao banco de dados
+            {
+                //Parâmetro Type do comando
+                comando.CommandType = CommandType.Text;
+                //Monta a query
+                comando.CommandText = "SELECT c.ID, c.idCliente, c.idPet, c.idHorario, cl.nome as nomeCliente, p.nome as nomePet, h.data " +
+                            "FROM Consulta c " +
+                            "INNER JOIN cliente cl ON c.idCliente = cl.ID " +
+                            "INNER JOIN pet p ON c.idPet = p.ID " +
+                            "INNER JOIN horarios h ON c.idHorario = h.ID " +
+                            "INNER JOIN veterinario v ON h.idVeterinario = v.ID " +
+                            "WHERE v.ID = @ID";
+
+                //Substitui os parâmetros da query, com cada atributo utilizado
+                comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = idVeterinario;
+
+                //Executa o comando para resgatar os dados no objeto 'reader'
+                reader = comando.ExecuteReader();
+
+                //Para cada registro encontrado
+                while (reader.Read())
+                {
+                    //Cria um objeto zerado
+                    Consulta consulta = new Consulta();
+                    //Seta os dados resgatados no objeto criado
+                    consulta.Codigo = int.Parse(reader["ID"].ToString());
+                    consulta.Cliente.Codigo = int.Parse(reader["idCliente"].ToString());
+                    consulta.Cliente.Nome = reader["nomeCliente"].ToString();
+                    consulta.Pet.Codigo = int.Parse(reader["idPet"].ToString());
+                    consulta.Pet.Nome = reader["nomePet"].ToString();
+                    consulta.Horario.Codigo = int.Parse(reader["idHorario"].ToString());
+                    consulta.Horario.Data = new Data(reader["data"].ToString(), "usTime");
+
+                    consultas.Add(consulta);
+                }
+                //Fecha o leitor
+                reader.Close();
+            }
+
+            //Encerra a conexão no banco de dados
+            conexaoBD.fechar();
+
+            //retorna o objeto endereço preenchido
+            return consultas;
         }
 
 
