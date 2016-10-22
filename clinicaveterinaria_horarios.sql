@@ -16,34 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pet`
+-- Table structure for table `horarios`
 --
 
-DROP TABLE IF EXISTS `pet`;
+DROP TABLE IF EXISTS `horarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pet` (
+CREATE TABLE `horarios` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) DEFAULT NULL,
-  `peso` double DEFAULT NULL,
-  `altura` double DEFAULT NULL,
-  `idAnimal` int(11) DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL,
+  `idVeterinario` int(11) NOT NULL,
+  `data` datetime NOT NULL,
+  `idConsulta` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`),
-  KEY `ID_idx` (`idAnimal`),
-  KEY `ID_idx1` (`idCliente`),
-  CONSTRAINT `ID` FOREIGN KEY (`idAnimal`) REFERENCES `animal` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  KEY `idConsulta_idx` (`idConsulta`),
+  KEY `idVeterinario_idx` (`idVeterinario`),
+  CONSTRAINT `idConsulta` FOREIGN KEY (`idConsulta`) REFERENCES `consulta` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idVeterinario` FOREIGN KEY (`idVeterinario`) REFERENCES `veterinario` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pet`
+-- Dumping data for table `horarios`
 --
 
-LOCK TABLES `pet` WRITE;
-/*!40000 ALTER TABLE `pet` DISABLE KEYS */;
-INSERT INTO `pet` VALUES (1,'Lala',67,18,1,1);
-/*!40000 ALTER TABLE `pet` ENABLE KEYS */;
+LOCK TABLES `horarios` WRITE;
+/*!40000 ALTER TABLE `horarios` DISABLE KEYS */;
+INSERT INTO `horarios` VALUES (1,1,'2016-11-07 08:30:00',1),(2,1,'2016-11-16 14:30:00',2),(3,1,'2016-11-16 16:00:00',NULL);
+/*!40000 ALTER TABLE `horarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-22  9:11:12
+-- Dump completed on 2016-10-22  9:11:13

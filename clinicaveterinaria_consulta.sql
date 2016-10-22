@@ -16,34 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pet`
+-- Table structure for table `consulta`
 --
 
-DROP TABLE IF EXISTS `pet`;
+DROP TABLE IF EXISTS `consulta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pet` (
+CREATE TABLE `consulta` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) DEFAULT NULL,
-  `peso` double DEFAULT NULL,
-  `altura` double DEFAULT NULL,
-  `idAnimal` int(11) DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL,
+  `idCliente` int(11) NOT NULL,
+  `idPet` int(11) NOT NULL,
+  `idHorario` int(11) NOT NULL,
+  `receita` mediumtext,
+  `prontuario` mediumtext,
   PRIMARY KEY (`ID`),
-  KEY `ID_idx` (`idAnimal`),
-  KEY `ID_idx1` (`idCliente`),
-  CONSTRAINT `ID` FOREIGN KEY (`idAnimal`) REFERENCES `animal` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  KEY `idCliente_idx` (`idCliente`),
+  KEY `idPet_idx` (`idPet`),
+  KEY `idHorario_idx` (`idHorario`),
+  CONSTRAINT `idCliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idHorario` FOREIGN KEY (`idHorario`) REFERENCES `horarios` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idPet` FOREIGN KEY (`idPet`) REFERENCES `pet` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pet`
+-- Dumping data for table `consulta`
 --
 
-LOCK TABLES `pet` WRITE;
-/*!40000 ALTER TABLE `pet` DISABLE KEYS */;
-INSERT INTO `pet` VALUES (1,'Lala',67,18,1,1);
-/*!40000 ALTER TABLE `pet` ENABLE KEYS */;
+LOCK TABLES `consulta` WRITE;
+/*!40000 ALTER TABLE `consulta` DISABLE KEYS */;
+INSERT INTO `consulta` VALUES (1,1,1,1,NULL,NULL),(2,1,1,2,NULL,NULL);
+/*!40000 ALTER TABLE `consulta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
