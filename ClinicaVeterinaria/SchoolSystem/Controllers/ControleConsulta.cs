@@ -22,6 +22,11 @@ namespace TI_ClinicaVeterinaria
             return horariosDAO.GetDisponibilidade(idVeterinario);
         }
 
+        public List<Consulta> ConsultaVeterinario(int idVeterinario)
+        {
+            return consultaDAO.GetVeterinatio(idVeterinario);
+        }
+
         public void marcarConsulta(Consulta consulta)
         {
             consultaDAO.Insert(consulta);
