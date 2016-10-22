@@ -34,7 +34,7 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;
                 //Monta a query
-                comando.CommandText = "SELECT h.ID, h.idVeterinario, h.data, h.idConsulta " +
+                comando.CommandText = "SELECT h.ID, h.idVeterinario, h.data " +
                             "FROM horarios h " +
                             "WHERE h.ID = @ID";
 
@@ -50,10 +50,10 @@ namespace TI_ClinicaVeterinaria
                     //Cria um objeto zerado
                     horario = new Horarios();
                     //Seta os dados resgatados no objeto criado
-                    horario.Codigo = reader.GetInt16(0);
-                    horario.Veterinario = veterinarioDAO.Get(reader.GetInt16(1));
-                    horario.Data = new Data(reader.GetDateTime(2).ToString(), "usTime");
-                    horario.Consulta = consultaDAO.Get(reader.GetInt16(3));
+                    horario.Codigo = int.Parse(reader["ID"].ToString());
+                    horario.Veterinario.Codigo = int.Parse(reader["idVeterinario"].ToString());
+                    horario.Data = new Data(reader["data"].ToString(), "usTime");
+                    //horario.Consulta.Codigo = int.Parse(reader["idConsulta"].ToString());
                 }
                 //Fecha o leitor
                 reader.Close();

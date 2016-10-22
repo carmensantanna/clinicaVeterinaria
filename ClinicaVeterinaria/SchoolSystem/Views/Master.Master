@@ -33,14 +33,14 @@
                     <li>Clientes
                         <ul class="itens">
                             <li><a href="~/Views/Clientes.aspx" title="Cadastrar novo Cliente" runat="server">Cadastrar novo Cliente</a></li>
-                            <li><a href="~/Views/PesquisaCliente.aspx" title="Pesquisar Cliente" runat="server">Pesaquisar Cliente</a></li>
+                            <li><a href="~/Views/PesquisaCliente.aspx" title="Pesquisar Cliente" runat="server">Pesquisar Cliente</a></li>
                         </ul>
                     </li>
                     <br />
                     <li>Pets
                         <ul class="itens">
                             <li><a id="A1" href="~/Views/IncluirPet.aspx" title="Cadastrar novo Pet" runat="server">Cadastrar novo Pet</a></li>
-                            <li><a id="A2" href="~/Views/PesquisaPet.aspx" title="Pesquisar Pet" runat="server">Pesaquisar Pets</a></li>
+                            <li><a id="A2" href="~/Views/PesquisaPet.aspx" title="Pesquisar Pet" runat="server">Pesquisar Pets</a></li>
                         </ul>
                     </li>
                     <br />
@@ -55,15 +55,13 @@
                             <li><a id="A5" href="~/Views/NovaVenda.aspx" title="Nova Venda" runat="server">Nova Venda</a></li>
                         </ul>
                     </li>
-                    <li>Consultar<ul class="itens">
-                            <li><a id="A4" href="~/Views/Consultar.aspx" title="Consultar" runat="server">Realizar Consulta</a></li>
-                        </ul>
-                    </li>
+                    <br />
                     <li>Produto<ul class="itens">                              
                         <li><a id="A6" href="~/Views/MovimentoEstoque.aspx" title="Movimentar Estoque" runat="server">Movimentar Estoque</a></li>
                             <li><a id="A7" href="~/Views/CadastrarProduto.aspx" title="Cadastrar Produtos" runat="server">Cadastrar Produtos</a></li>
                         </ul>                       
                     </li>
+                    <br />
                     <li>Veterinário<ul class="itens">                              
                         <li><a id="A8" href="~/Views/PesquisaConsulta.aspx" title="Pesquisar consultas" runat="server">Listar Consultas</a></li>
                         </ul>                       

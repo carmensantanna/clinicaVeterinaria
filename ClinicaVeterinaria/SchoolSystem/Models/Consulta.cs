@@ -11,7 +11,6 @@ namespace TI_ClinicaVeterinaria
         private int codConsulta;
         private Cliente cliente;
         private Pet pet;
-        private string veterinario;
         private Horarios horarioConsulta;
         private string receita;
         private string prontuario;
@@ -24,20 +23,20 @@ namespace TI_ClinicaVeterinaria
 
         public Consulta()
         {
-            Init(0, new Cliente(), new Pet(), new Horarios(), "", "", "");
+            Init(0, new Cliente(), new Pet(), new Horarios(), "", "");
         }
 
-        public Consulta(int codConsulta, Cliente cliente, Pet pet, Horarios horario, string receita, string prontuarios,string vetrinario)
+        public Consulta(int codConsulta, Cliente cliente, Pet pet, Horarios horario, string receita, string prontuarios)
         {
-            Init(codConsulta, cliente, pet, horario, receita, prontuario,veterinario);
+            Init(codConsulta, cliente, pet, horario, receita, prontuario);
         }
 
-        public Consulta(Cliente cliente, Pet pet, Horarios horario, string receita, string prontuario,string vetrinario)
+        public Consulta(Cliente cliente, Pet pet, Horarios horario, string receita, string prontuario)
         {
-            Init(0, cliente, pet, horario, receita, prontuario,vetrinario);
+            Init(0, cliente, pet, horario, receita, prontuario);
         }
 
-        private void Init(int codConsulta, Cliente cliente, Pet pet, Horarios horario, string receita, string prontuario,string veterinario)
+        private void Init(int codConsulta, Cliente cliente, Pet pet, Horarios horario, string receita, string prontuario)
         {
             if (codConsulta == 0)
                 codConsulta = ultimoCod++;
@@ -48,7 +47,6 @@ namespace TI_ClinicaVeterinaria
             this.horarioConsulta = horario;
             this.receita = receita;
             this.prontuario = prontuario;
-            this.veterinario = veterinario;
         }
 
         public int Codigo
@@ -85,11 +83,6 @@ namespace TI_ClinicaVeterinaria
         {
             get { return prontuario; }
             set { prontuario = value; }
-        }
-        public string Veterinario
-        {
-            get { return veterinario; }
-            set { veterinario = value; }
         }
     }
 }

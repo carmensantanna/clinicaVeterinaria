@@ -17,13 +17,13 @@ namespace TI_ClinicaVeterinaria
         public Horarios()
         {
             ultimoCod = 1;
-            Init(0,new Data(), new Veterinario(), new Consulta());
+            Init(0,new Data(), new Veterinario());
         }
-        public Horarios(int codigo,Data data, Veterinario veterinario, Consulta consulta)
+        public Horarios(int codigo,Data data, Veterinario veterinario)
         {
-            Init(codigo, data, veterinario, consulta);
+            Init(codigo, data, veterinario);
         }
-        public void Init(int codigo, Data data, Veterinario veterinario, Consulta consulta)
+        public void Init(int codigo, Data data, Veterinario veterinario)
         {
             if (codigo == 0)
                 codigo = ultimoCod++;
@@ -31,7 +31,6 @@ namespace TI_ClinicaVeterinaria
             this.codHorario = codigo;
             this.data = data;
             this.veterinario = veterinario;
-            this.consulta = consulta;
         }
 
         public int Codigo
@@ -45,11 +44,13 @@ namespace TI_ClinicaVeterinaria
             get { return data; }
             set { data = value; }
         }
+
         public Veterinario Veterinario
         {
             get { return veterinario; }
             set { veterinario = value; }
         }
+
         public Consulta Consulta
         {
             get { return consulta; }

@@ -6,45 +6,57 @@ using System.Threading.Tasks;
 
 namespace TI_ClinicaVeterinaria
 {
-    class Veterinario:Usuario
+    class Veterinario
     {
         private static int ultimoCod;
         private int codVeterinario;
         private string crmv;
-        private List<Horarios> agenda;
+        private string nome;
+        private string email;
+        //private List<Horarios> agenda;
 
         static Veterinario()
         {
             ultimoCod = 1;
         }
 
-        public Veterinario():
-            base(0, "", "", "", "")
+        public Veterinario()
         {
-            Init(0, "", new List<Horarios>());
+            Init(0, "", "", "");
         }
 
-        public Veterinario(int codUsuario, int codVeterinario, string nome, string login, string senha, string email,
-            string crmv):
-                base(codUsuario, nome, login, senha, email)
+        public Veterinario(int codVeterinario, string nome, string email, string crmv)
         {
-            Init(codVeterinario, crmv, new List<Horarios>());
+            Init(codVeterinario, nome, email, crmv);
         }
 
-        public void Init(int codVeterinario, string crmv, List<Horarios> agenda)
+        public void Init(int codVeterinario, string nome, string email, string crmv)
         {
             if (codVeterinario == 0)
                 codVeterinario = ultimoCod++;
 
             this.codVeterinario = codVeterinario;
             this.crmv = crmv;
-            this.agenda = agenda;
+            this.nome = nome;
+            this.email = email;
+            //this.agenda = agenda;
         }
-        
-        public int CodVeterinario
+
+        public int Codigo
         {
             get { return codVeterinario; }
             set { codVeterinario = value; }
+        }
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
         
         public string CRMV
@@ -52,10 +64,12 @@ namespace TI_ClinicaVeterinaria
             get { return crmv; }
             set { crmv = value; }
         }
-        public List<Horarios> Agenda
+
+        
+        /*public List<Horarios> Agenda
         {
             get { return agenda; }
             set { agenda = value; }
-        }
+        }*/
     }
 }

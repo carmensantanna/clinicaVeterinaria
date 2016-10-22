@@ -25,9 +25,6 @@ namespace TI_ClinicaVeterinaria
             Consulta consulta = null;
             //Objeto Mysql que é retornado na consulta
             MySqlDataReader reader;
-            HorariosDAO horariosDAO = new HorariosDAO(conexaoBD);
-            ClienteDAO clienteDAO = new ClienteDAO(conexaoBD);
-            PetDAO petDAO = new PetDAO(conexaoBD);
 
             //Cria um objeto 'comando' para manipular a query e a execução
             using (MySqlCommand comando = conexaoBD.buscar().CreateCommand()) //conexaoBD.buscar() inicia a conexão ao banco de dados
@@ -35,7 +32,7 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;               
                 //Monta a query
-                comando.CommandText = "SELECT c.ID, c.idCliente, c.idPet, c.idHorarios, c.receita, c.prontuario " +
+                comando.CommandText = "SELECT c.ID, c.idCliente, c.idPet, c.idHorario, c.receita, c.prontuario " +
                             "FROM Consulta c " +
                             "WHERE c.ID = @ID";
 
@@ -51,12 +48,12 @@ namespace TI_ClinicaVeterinaria
                     //Cria um objeto zerado
                     consulta = new Consulta();
                     //Seta os dados resgatados no objeto criado
-                    consulta.Codigo = reader.GetInt16(0);
-                    consulta.Cliente = clienteDAO.Get(reader.GetInt16(1));
-                    consulta.Pet = petDAO.Get(reader.GetInt16(2));
-                    consulta.Horario = horariosDAO.Get(reader.GetInt16(3));
-                    consulta.Receita = reader.GetString(4);
-                    consulta.Prontuario = reader.GetString(5);
+                    consulta.Codigo = int.Parse(reader["ID"].ToString());
+                    consulta.Cliente.Codigo = int.Parse(reader["idCliente"].ToString());
+                    consulta.Pet.Codigo = int.Parse(reader["idPet"].ToString());
+                    consulta.Horario.Codigo = int.Parse(reader["idHorario"].ToString());
+                    consulta.Receita = reader["receita"].ToString();
+                    consulta.Prontuario = reader["prontuario"].ToString();
                 }
                 //Fecha o leitor
                 reader.Close();
@@ -72,11 +69,9 @@ namespace TI_ClinicaVeterinaria
         public List<Consulta> GetVeterinatio(int idVeterinario)
         {
             List<Consulta> consultas = new List<Consulta>();
+            Consulta consulta;
             //Objeto Mysql que é retornado na consulta
             MySqlDataReader reader;
-            HorariosDAO horariosDAO = new HorariosDAO(conexaoBD);
-            ClienteDAO clienteDAO = new ClienteDAO(conexaoBD);
-            PetDAO petDAO = new PetDAO(conexaoBD);
 
             //Cria um objeto 'comando' para manipular a query e a execução
             using (MySqlCommand comando = conexaoBD.buscar().CreateCommand()) //conexaoBD.buscar() inicia a conexão ao banco de dados
@@ -85,7 +80,7 @@ namespace TI_ClinicaVeterinaria
                 comando.CommandType = CommandType.Text;
                 //Monta a query
                 comando.CommandText = "SELECT c.ID, c.idCliente, c.idPet, c.idHorario, cl.nome as nomeCliente, p.nome as nomePet, h.data " +
-                            "FROM Consulta c " +
+                            "FROM consulta c " +
                             "INNER JOIN cliente cl ON c.idCliente = cl.ID " +
                             "INNER JOIN pet p ON c.idPet = p.ID " +
                             "INNER JOIN horarios h ON c.idHorario = h.ID " +
@@ -102,7 +97,7 @@ namespace TI_ClinicaVeterinaria
                 while (reader.Read())
                 {
                     //Cria um objeto zerado
-                    Consulta consulta = new Consulta();
+                    consulta = new Consulta();
                     //Seta os dados resgatados no objeto criado
                     consulta.Codigo = int.Parse(reader["ID"].ToString());
                     consulta.Cliente.Codigo = int.Parse(reader["idCliente"].ToString());
@@ -145,7 +140,6 @@ namespace TI_ClinicaVeterinaria
                 comando.Parameters.Add("@idHorarios", MySqlDbType.Int16).Value = consulta.Horario.Codigo;
                 comando.Parameters.Add("@receita", MySqlDbType.Double).Value = consulta.Receita;
                 comando.Parameters.Add("@prontuario", MySqlDbType.Double).Value = consulta.Prontuario;
-                comando.Parameters.Add("@veterinario", MySqlDbType.Double).Value = consulta.Veterinario;
 
                 //Resgata o ID gerado pelo banco de dados (comando last_insert_id() usado na query)
                 consulta.Codigo = int.Parse(comando.ExecuteScalar().ToString());
@@ -180,7 +174,6 @@ namespace TI_ClinicaVeterinaria
                 comando.Parameters.Add("@idPet", MySqlDbType.Int16).Value = consulta.Pet.Codigo;
                 comando.Parameters.Add("@receita", MySqlDbType.Text).Value = consulta.Receita;
                 comando.Parameters.Add("@prontuario", MySqlDbType.Text).Value = consulta.Prontuario;
-                comando.Parameters.Add("@vetrinario", MySqlDbType.Text).Value = consulta.Veterinario;
                 comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = consulta.Codigo;
                 //Verifica quantos registros foram afetados com o Update. Se nenhum registro foi afetado(<= zero) significa que não foi executado com sucesso 
                 if (comando.ExecuteNonQuery() <= 0)

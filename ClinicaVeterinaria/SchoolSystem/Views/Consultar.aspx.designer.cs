@@ -31,13 +31,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
-        /// TextBox2 control.
+        /// idConsulta_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox idConsulta_txt;
         
         /// <summary>
         /// label2 control.
@@ -49,13 +49,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label2;
         
         /// <summary>
-        /// TextBox6 control.
+        /// dtConsulta_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox dtConsulta_txt;
         
         /// <summary>
         /// label3 control.
@@ -67,13 +67,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label3;
         
         /// <summary>
-        /// TextBox7 control.
+        /// horaConsulta_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox horaConsulta_txt;
         
         /// <summary>
         /// label4 control.
@@ -85,13 +85,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label4;
         
         /// <summary>
-        /// TextBox1 control.
+        /// pet_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox pet_txt;
         
         /// <summary>
         /// label5 control.
@@ -103,13 +103,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label5;
         
         /// <summary>
-        /// TextBox3 control.
+        /// pesoPet_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox pesoPet_txt;
         
         /// <summary>
         /// label6 control.
@@ -121,13 +121,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label6;
         
         /// <summary>
-        /// TextBox4 control.
+        /// altPet_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox altPet_txt;
         
         /// <summary>
         /// label7 control.
@@ -139,13 +139,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label7;
         
         /// <summary>
-        /// TextBox5 control.
+        /// cliente_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox cliente_txt;
         
         /// <summary>
         /// label8 control.
@@ -157,13 +157,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label8;
         
         /// <summary>
-        /// TextBox8 control.
+        /// diagnostico_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox diagnostico_txt;
         
         /// <summary>
         /// label9 control.
@@ -175,13 +175,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label9;
         
         /// <summary>
-        /// TextBox9 control.
+        /// receita_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox receita_txt;
         
         /// <summary>
         /// confirmaConsultar control.

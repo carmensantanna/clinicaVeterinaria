@@ -31,9 +31,13 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;
                 //Monta a query
-                comando.CommandText = "SELECT u.ID, u.nome, u.login, u.senha, u. email, v.crmv, v.ID " +
+                /*comando.CommandText = "SELECT u.ID, u.nome, u.login, u.senha, u. email, v.crmv, v.ID " +
                             "FROM usuario u INNER JOIN veterinario v ON u.ID = v.idUsuario " +
-                            "WHERE u.ID = @ID";
+                            "WHERE u.ID = @ID";*/
+
+                comando.CommandText = "SELECT v.ID, v.nome, v.crmv, v.email " +
+                            "FROM veterinario v " +
+                            "WHERE v.ID = @ID";
 
                 //Substitui os parâmetros da query, com cada atributo utilizado
                 comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = idUser;
@@ -47,13 +51,10 @@ namespace TI_ClinicaVeterinaria
                     //Cria um objeto zerado
                     veterinario = new Veterinario();
                     //Seta os dados resgatados no objeto criado
-                    veterinario.Codigo = reader.GetInt16(0);
-                    veterinario.Nome = reader.GetString(1);
-                    veterinario.Login = reader.GetString(2);
-                    veterinario.Senha = reader.GetString(3);
-                    veterinario.Email = reader.GetString(4);
-                    veterinario.CRMV = reader.GetString(5);
-                    veterinario.CodVeterinario = reader.GetInt16(6);
+                    veterinario.Codigo = int.Parse(reader["ID"].ToString());
+                    veterinario.Nome = reader["nome"].ToString();
+                    veterinario.CRMV = reader["crmv"].ToString();
+                    veterinario.Email = reader["email"].ToString();
                 }
                 //Fecha o leitor
                 reader.Close();
@@ -83,8 +84,8 @@ namespace TI_ClinicaVeterinaria
                 //Substitui os parâmetros da query, com cada atributo utilizado
                 comando.Parameters.Add("@codUsuario", MySqlDbType.Int16).Value = veterinario.Codigo;
                 comando.Parameters.Add("@nome", MySqlDbType.Text).Value = veterinario.Nome;
-                comando.Parameters.Add("@login", MySqlDbType.Text).Value = veterinario.Login;
-                comando.Parameters.Add("@senha", MySqlDbType.Text).Value = veterinario.Senha;
+                //comando.Parameters.Add("@login", MySqlDbType.Text).Value = veterinario.Login;
+                //comando.Parameters.Add("@senha", MySqlDbType.Text).Value = veterinario.Senha;
                 comando.Parameters.Add("@email", MySqlDbType.Text).Value = veterinario.Email;
                 comando.Parameters.Add("@crmv", MySqlDbType.Text).Value = veterinario.CRMV;
                 //comando.Parameters.Add("@codAgenda", MySqlDbType.Text).Value = veterinario.CodAgenda;
@@ -121,12 +122,12 @@ namespace TI_ClinicaVeterinaria
                 //Substitui os parâmetros da query, com cada atributo utilizado
                 comando.Parameters.Add("@codUsuario", MySqlDbType.Int16).Value = veterinario.Codigo;
                 comando.Parameters.Add("@nome", MySqlDbType.Text).Value = veterinario.Nome;
-                comando.Parameters.Add("@login", MySqlDbType.Text).Value = veterinario.Login;
-                comando.Parameters.Add("@senha", MySqlDbType.Text).Value = veterinario.Senha;
+                //comando.Parameters.Add("@login", MySqlDbType.Text).Value = veterinario.Login;
+                //comando.Parameters.Add("@senha", MySqlDbType.Text).Value = veterinario.Senha;
                 comando.Parameters.Add("@email", MySqlDbType.Text).Value = veterinario.Email;
                 comando.Parameters.Add("@crmv", MySqlDbType.Text).Value = veterinario.CRMV;
                // comando.Parameters.Add("@codAgenda", MySqlDbType.Int16).Value = veterinario.CodAgenda;
-                comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = veterinario.CodVeterinario;
+                comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = veterinario.Codigo;
                 //Verifica quantos registros foram afetados com o Update. Se nenhum registro foi afetado(<= zero) significa que não foi executado com sucesso 
                 if (comando.ExecuteNonQuery() <= 0)
                     sucesso = false;

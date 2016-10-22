@@ -10,11 +10,17 @@ namespace TI_ClinicaVeterinaria
     {
         private ConsultaDAO consultaDAO;
         private HorariosDAO horariosDAO;
+        private PetDAO petDAO;
+        private ClienteDAO clienteDAO;
+        private VeterinarioDAO veterinarioDAO;
 
         public ControleConsulta()
         {
             consultaDAO = new ConsultaDAO(new Conexao());
             horariosDAO = new HorariosDAO(new Conexao());
+            petDAO = new PetDAO(new Conexao());
+            clienteDAO = new ClienteDAO(new Conexao());
+            veterinarioDAO = new VeterinarioDAO(new Conexao());
         }
 
         public List<Horarios> ConsultaAgenda(int idVeterinario)
@@ -35,7 +41,14 @@ namespace TI_ClinicaVeterinaria
 
         public Consulta Get(int idConsulta)
         {
-            return consultaDAO.Get(idConsulta);
+            Consulta consulta = consultaDAO.Get(idConsulta);
+            consulta.Horario = horariosDAO.Get(consulta.Horario.Codigo);
+            //consulta.Horario.Consulta = consulta;
+            consulta.Horario.Veterinario = veterinarioDAO.Get(consulta.Horario.Veterinario.Codigo);
+            consulta.Cliente = clienteDAO.Get(consulta.Cliente.Codigo);
+            consulta.Pet = petDAO.Get(consulta.Pet.Codigo);
+
+            return consulta;
         }
 
     }

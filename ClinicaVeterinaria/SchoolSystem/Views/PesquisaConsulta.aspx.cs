@@ -24,23 +24,11 @@ namespace TI_ClinicaVeterinaria
 
         protected void gridConsulta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals("Consultar"))
             {
-                string idCliente = e.CommandArgument.ToString();
-                if (!String.IsNullOrEmpty(idCliente))
-                    this.Response.Redirect("EditarClientes.aspx?codigo=" + idCliente);
-            }
-            else if (e.CommandName.Equals("IncluirPet"))
-            {
-                string idCliente = e.CommandArgument.ToString();
-                if (!String.IsNullOrEmpty(idCliente))
-                    this.Response.Redirect("IncluirPet.aspx?cliente=" + idCliente);
-            }
-            else if (e.CommandName.Equals("AgendarConsulta"))
-            {
-                string idCliente = e.CommandArgument.ToString();
-                if (!String.IsNullOrEmpty(idCliente))
-                    this.Response.Redirect("IncluirConsulta.aspx?cliente=" + idCliente);
+                string idConsulta = e.CommandArgument.ToString();
+                if (!String.IsNullOrEmpty(idConsulta))
+                    this.Response.Redirect("Consultar.aspx?codigo=" + idConsulta);
             }
         }
 

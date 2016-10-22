@@ -26,9 +26,13 @@ namespace TI_ClinicaVeterinaria
         private int dia;
         private int mes;
         private int ano;
+        private int hora;
+        private int minuto;
+        private int segundo;
+
         //Constantes
-        private int[] mes31 = { 1, 3, 5, 7, 8, 10, 12 };
-        private int[] mes30 = { 4, 6, 9, 11 };
+        //private int[] mes31 = { 1, 3, 5, 7, 8, 10, 12 };
+        //private int[] mes30 = { 4, 6, 9, 11 };
 
         //Consturtor default
         public Data()
@@ -57,11 +61,15 @@ namespace TI_ClinicaVeterinaria
                 case "us":
                     toBR(dataString);
                     break;
+
+                case "usTime":
+                    toBRTime(dataString);
+                    break;
             }
         }
 
         //Verifica se uma data é válida
-        public bool verificaData()
+        /*public bool verificaData()
         {
             if (this.mes >= 1 && this.mes <= 12)
             {
@@ -152,7 +160,7 @@ namespace TI_ClinicaVeterinaria
             }
 
             return false;
-        }
+        }*/
 
         //Converte uma string no formato DD/MM/AAA para data
         public void toData(string data)
@@ -204,7 +212,7 @@ namespace TI_ClinicaVeterinaria
             //Se o ano é menor, a data já é considerada menor
             if (data.Ano < this.ano)
                 return true;
-            else if(data.Ano == this.ano)
+            else if (data.Ano == this.ano)
             {
                 if (data.Mes < this.mes)
                     return true;
@@ -282,6 +290,29 @@ namespace TI_ClinicaVeterinaria
             return this;
         }
 
+        //Recebe uma data no formato de banco de dados e converte para objeto data
+        public Data toBRTime(string data)
+        {
+            string[] aux = data.Split(' ');
+
+            toData(aux[0]);
+
+            string[] time = aux[1].Split(':');
+
+            if (time.Length == 3)
+            {
+                this.segundo = int.Parse(time[2]);
+                this.minuto = int.Parse(time[1]);
+                this.hora = int.Parse(time[0]);
+            }
+            else
+            {
+                this.hora = this.minuto = this.segundo = 1;
+            }
+
+            return this;
+        }
+
         //Getters e Setters
         public int Dia
         {
@@ -299,6 +330,38 @@ namespace TI_ClinicaVeterinaria
         {
             get { return ano; }
             set { ano = value; }
+        }
+
+        public int Hora
+        {
+            get { return hora; }
+            set { hora = value; }
+        }
+        public int Minuto
+        {
+            get { return minuto; }
+            set { minuto = value; }
+        }
+        public int Segundo
+        {
+            get { return segundo; }
+            set { segundo = value; }
+        }
+
+        public string DataTxt
+        {
+            get
+            {
+                return dia.ToString("00") + "/" + mes.ToString("00") + "/" + ano.ToString("00");
+            }
+        }
+
+        public string HoraMin
+        {
+            get
+            {
+                return hora.ToString("00") + ":" + minuto.ToString("00");
+            }
         }
     }
 }
