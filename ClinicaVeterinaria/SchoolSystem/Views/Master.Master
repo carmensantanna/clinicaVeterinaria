@@ -64,6 +64,10 @@
                             <li><a id="A7" href="~/Views/CadastrarProduto.aspx" title="Cadastrar Produtos" runat="server">Cadastrar Produtos</a></li>
                         </ul>                       
                     </li>
+                    <li>Veterinário<ul class="itens">                              
+                        <li><a id="A8" href="~/Views/PesquisaConsulta.aspx" title="Pesquisar consultas" runat="server">Listar Consultas</a></li>
+                        </ul>                       
+                    </li>
                 </ul>
 
             </div>
