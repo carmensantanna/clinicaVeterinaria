@@ -14,17 +14,18 @@ namespace TI_ClinicaVeterinaria
         private ControleProduto controleProduto;
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*var list = new ControleProduto().GetProduto();
+            var list = new ControleProduto().GetProduto();
             if ((list != null) && (list.Count > 0))
             {
-                this.gridEstoque.DataSource = list;
-                this.gridEstoque.DataBind();
-            }*/
+                this.gridProduto.DataSource = list;
+                this.gridProduto.DataBind();
+            }
         }
 
         protected void Confirmar_Click(object sender, EventArgs e)
         {
             RegistrarEstoque();
+            Response.Redirect(Request.RawUrl);
         }
 
         public void RegistrarEstoque()

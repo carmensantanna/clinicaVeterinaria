@@ -29,9 +29,11 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;
                 //Monta a query
-                comando.CommandText = "SELECT MAX(e.ID), e.quantidadeAtual " +
+                comando.CommandText = "SELECT e.ID, e.quantidadeAtual " +
                                       "FROM estoque e " +
-                                      "WHERE e.idProduto = @ID ORDER BY e.ID DESC";
+                                      "WHERE e.idProduto = @ID ORDER BY e.ID DESC LIMIT 1";
+
+                Console.WriteLine(comando.CommandText);
 
                 //Substitui os parâmetros da query, com cada atributo utilizado
                 comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = idProduto;
@@ -39,16 +41,20 @@ namespace TI_ClinicaVeterinaria
                 //Executa o comando para resgatar os dados no objeto 'reader'
                 reader = comando.ExecuteReader();
 
-                if (reader.RecordsAffected >= 0)
-                {
+                //if (reader.FieldCount >= 0)
+                //{
                     //Para cada registro encontrado
-                    while (reader.Read())
-                    {
+                while (reader.Read())
+                {
+                    if (reader["quantidadeAtual"].ToString() != "")
                         quantidade = double.Parse(reader["quantidadeAtual"].ToString());
-                    }
+                    else
+                        quantidade = 0;
                 }
+                /*}
                 else
                     quantidade = 0;
+                    */
                 
                 //Fecha o leitor
                 reader.Close();

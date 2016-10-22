@@ -27,5 +27,17 @@
             </li>
             </ul>
             <h1>Lista de Estoques</h1>
+
+       <asp:GridView ID="gridProduto" runat="server" EmptyDataText="Não Existem Clientes Cadastrados..." AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="Codigo" HeaderText="Código" />
+                <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                <asp:BoundField DataField="ValorReal" HeaderText="Valor" ItemStyle-HorizontalAlign="Center" />
+                <asp:BoundField DataField="Estoque" HeaderText="Quantidade" ItemStyle-HorizontalAlign="Center" >
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
+                </Columns>
+            <HeaderStyle BackColor="#6699FF" Font-Bold="True" />
+        </asp:GridView>
    </asp:Panel>   
 </asp:Content>

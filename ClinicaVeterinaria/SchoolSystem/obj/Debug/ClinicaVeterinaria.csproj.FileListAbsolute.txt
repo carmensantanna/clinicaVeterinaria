@@ -58,7 +58,6 @@ C:\Users\Braulley\Documents\Visual Studio 2015\Projects\ClinicaVeterinaria\Clini
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\ClinicaVeterinaria\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.dll
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\ClinicaVeterinaria\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.pdb
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\ClinicaVeterinaria\ClinicaVeterinaria\SchoolSystem\bin\AjaxControlToolkit.dll
-C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\obj\Debug\ClinicaVeterinaria.csprojResolveAssemblyReference.cache
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.dll
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.pdb
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\bin\SchoolSystem.dll.config
@@ -71,3 +70,4 @@ C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeter
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\bin\MySql.Data.Entity.EF6.dll
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.xml
 C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\Braulley\Documents\Visual Studio 2015\Projects\Veterinaria\ClinicaVeterinaria\SchoolSystem\obj\Debug\ClinicaVeterinaria.csprojResolveAssemblyReference.cache

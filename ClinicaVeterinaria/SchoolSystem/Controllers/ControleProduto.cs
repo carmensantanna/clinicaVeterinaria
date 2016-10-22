@@ -33,7 +33,13 @@ namespace TI_ClinicaVeterinaria
 
         public List<Produto> GetProduto()
         {
-            return produtoDAO.GetProdutos();
+            List<Produto> produtos = produtoDAO.GetProdutos();
+            //Produto produto = new Produto();
+
+            foreach(var produto in produtos)
+                produto.Estoque = estoqueDAO.Get(produto.Codigo);
+
+            return produtos;
         }
 
         //Insere um cliente no banco de dados
