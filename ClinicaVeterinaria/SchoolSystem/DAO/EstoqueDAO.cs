@@ -39,11 +39,16 @@ namespace TI_ClinicaVeterinaria
                 //Executa o comando para resgatar os dados no objeto 'reader'
                 reader = comando.ExecuteReader();
 
-                //Para cada registro encontrado
-                while (reader.Read())
+                if (reader.RecordsAffected >= 0)
                 {
-                    quantidade = double.Parse(reader["quantidadeAtual"].ToString());
+                    //Para cada registro encontrado
+                    while (reader.Read())
+                    {
+                        quantidade = double.Parse(reader["quantidadeAtual"].ToString());
+                    }
                 }
+                else
+                    quantidade = 0;
                 
                 //Fecha o leitor
                 reader.Close();

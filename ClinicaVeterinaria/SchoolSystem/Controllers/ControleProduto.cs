@@ -26,8 +26,7 @@ namespace TI_ClinicaVeterinaria
         public Produto Get(int idProduto)
         {
             this.produto = produtoDAO.Get(idProduto);
-            double quantidade = estoqueDAO.Get(idProduto);
-            this.produto.Estoque = quantidade;
+            //double quantidade = estoqueDAO.Get(idProduto);
             //retorna o objeto produto preenchido
             return this.produto;
         }
@@ -44,7 +43,7 @@ namespace TI_ClinicaVeterinaria
             int idProduto = 0;
 
             idProduto = produtoDAO.Insert(produto);
-            movimentoEstoque(movEntrada, produto, produto.Estoque);
+            //movimentoEstoque(movEntrada, produto, produto.Estoque);
 
             //Retorna o ID atualizado do cliente
             return idProduto;
@@ -96,7 +95,7 @@ namespace TI_ClinicaVeterinaria
                         estoqueDAO.Insert(produto.Codigo, movSaida, quantidade, quantidadeAtual);
                         break;
                 }
-                produto.Estoque = quantidadeAtual;
+                //produto.Estoque = quantidadeAtual;
             }
         }
 

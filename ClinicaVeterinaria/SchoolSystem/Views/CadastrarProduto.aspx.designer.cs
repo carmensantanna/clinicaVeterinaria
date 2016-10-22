@@ -76,24 +76,6 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.TextBox valor_prod;
         
         /// <summary>
-        /// IdQtd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IdQtd;
-        
-        /// <summary>
-        /// quant_prod control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quant_prod;
-        
-        /// <summary>
         /// bntAdd control.
         /// </summary>
         /// <remarks>

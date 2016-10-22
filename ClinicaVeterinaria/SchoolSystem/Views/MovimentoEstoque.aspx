@@ -4,27 +4,28 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContent" runat="server">
    <asp:Panel runat="server" ID="pnlUpdate" Visible="true" Height="512px" Width="717px">
-        <h1>Movimento de Estoque</h1>
+        <h1>Buscar Produto</h1>
         <ul>
-            <li style="display: block" ID="controle">
+            <li ID="controle">
                 <asp:Label Text="ID" ID="label6" runat="server">ID do Produto</asp:Label>
                 <asp:TextBox ID="idpd_txt" Text="" CssClass="radiusInput" runat="server"></asp:TextBox>
             </li>
-            <li style="display: block">
+            <li>
                 <asp:Label Text="MovimentoEstoque" ID="label1" runat="server">Movimento de Estoque</asp:Label>
                 <asp:DropDownList runat="Server" ID="ddl" DataTextField="dd">
                     <asp:ListItem Text="Entrada" Value="E"/>
                     <asp:ListItem Text="Saída" Value="S" />       
                 </asp:DropDownList>
             </li>  
-            <li style="display: block">
+            <li>
                 <asp:Label Text="Quantidade" ID="label4" runat="server">Quantidade</asp:Label>
                 <asp:TextBox ID="qtd_txt" Text="" CssClass="radiusInput" runat="server"></asp:TextBox>
             </li>   
                             
-            <li style="display: block">
+            <li >
                 <asp:Button ID="Confirmar" CssClass="btn btnAdd" runat="server" Text="Confirmar" OnClick="Confirmar_Click" />
             </li>
             </ul>
+            <h1>Lista de Estoques</h1>
    </asp:Panel>   
 </asp:Content>

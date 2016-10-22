@@ -30,7 +30,7 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;
                 //Monta a query
-                comando.CommandText = "SELECT p.ID, p.nomeProduto, p.valor, p.estoque " +
+                comando.CommandText = "SELECT p.ID, p.nome, p.valor " +
                                       "FROM produto p";
 
                 //Executa o comando para resgatar os dados no objeto 'reader'
@@ -45,7 +45,7 @@ namespace TI_ClinicaVeterinaria
                     produto.Codigo = int.Parse(reader["ID"].ToString());
                     produto.Nome = reader["nome"].ToString();
                     produto.Valor = double.Parse(reader["valor"].ToString());
-                    produto.Estoque = double.Parse(reader["estoque"].ToString());
+                    //produto.Estoque = double.Parse(reader["estoque"].ToString());
 
                     //Insere na lista de clientes
                     produtos.Add(produto);
@@ -67,7 +67,7 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;
                 //Monta a query
-                comando.CommandText = "SELECT p.ID, p.nomeProduto, p.valor, p.estoque " +
+                comando.CommandText = "SELECT p.ID, p.nome, p.valor " +
                                       "FROM produto p " +
                                       "WHERE p.ID = @ID";
 
@@ -84,9 +84,8 @@ namespace TI_ClinicaVeterinaria
                     produto = new Produto();
                     //Seta os dados resgatados no objeto criado
                     produto.Codigo = int.Parse(reader["ID"].ToString());
-                    produto.Nome = reader["nomeProduto"].ToString();
+                    produto.Nome = reader["nome"].ToString();
                     produto.Valor = double.Parse(reader["valor"].ToString());
-                    produto.Estoque = double.Parse(reader["estoque"].ToString());
                 }
                 //Fecha o leitor
                 reader.Close();
@@ -113,7 +112,7 @@ namespace TI_ClinicaVeterinaria
                 //Substitui os parâmetros da query, com cada atributo utilizado
                 comando.Parameters.Add("@nome", MySqlDbType.Text).Value = produto.Nome;
                 comando.Parameters.Add("@valor", MySqlDbType.Double).Value = produto.Valor;
-                comando.Parameters.Add("@estoque", MySqlDbType.Double).Value = produto.Estoque;
+                //comando.Parameters.Add("@estoque", MySqlDbType.Double).Value = produto.Estoque;
 
                 //Resgata o ID gerado pelo banco de dados (comando last_insert_id() usado na query)
                 produto.Codigo = int.Parse(comando.ExecuteScalar().ToString());

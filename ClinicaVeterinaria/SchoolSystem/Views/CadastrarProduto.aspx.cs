@@ -27,7 +27,7 @@ namespace TI_ClinicaVeterinaria
             controleproduto = new ControleProduto();
             produto.Nome = nome_prod.Text.Trim();
             produto.Valor = double.Parse(valor_prod.Text.Trim());
-            produto.Estoque = double.Parse(quant_prod.Text.Trim());
+            //produto.Estoque = double.Parse(quant_prod.Text.Trim());
             controleproduto.Insert(produto);
         }
         

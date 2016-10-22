@@ -21,10 +21,6 @@
                 <asp:TextBox ID="valor_prod" CssClass="radiusInput" runat="server"></asp:TextBox>
             </li>
             <li>
-                <asp:Label ID="IdQtd" runat="server" Text="Quantidade do Produto">Quantidade do Produto</asp:Label>
-                <asp:TextBox ID="quant_prod" CssClass="radiusInput" runat="server" ></asp:TextBox>
-            </li>
-            <li>
                 <asp:Button ID="bntAdd" CssClass="btn btnAdd" runat="server" Text="Cadastrar Produto" OnClick="bntAdd_Click" />
             </li>
             </ul>       
