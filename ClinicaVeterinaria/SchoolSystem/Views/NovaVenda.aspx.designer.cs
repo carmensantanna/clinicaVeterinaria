@@ -94,40 +94,22 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.TextBox valor_venda;
         
         /// <summary>
-        /// label9 control.
+        /// label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label9;
+        protected global::System.Web.UI.WebControls.Label label6;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// cod_produto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label5;
-        
-        /// <summary>
-        /// quantidade_prod control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quantidade_prod;
+        protected global::System.Web.UI.WebControls.TextBox cod_produto;
         
         /// <summary>
         /// incluirItem control.

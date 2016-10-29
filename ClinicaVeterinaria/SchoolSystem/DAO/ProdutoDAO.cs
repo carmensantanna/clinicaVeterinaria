@@ -106,8 +106,8 @@ namespace TI_ClinicaVeterinaria
                 //Parâmetro Type do comando
                 comando.CommandType = CommandType.Text;
                 //Monta a query
-                comando.CommandText = "INSERT INTO produto(nome, valor, estoque) " +
-                            "VALUES(@nome, @valor, @estoque); SELECT last_insert_id()";
+                comando.CommandText = "INSERT INTO produto(nome, valor) " +
+                            "VALUES(@nome, @valor); SELECT last_insert_id()";
 
                 //Substitui os parâmetros da query, com cada atributo utilizado
                 comando.Parameters.Add("@nome", MySqlDbType.Text).Value = produto.Nome;

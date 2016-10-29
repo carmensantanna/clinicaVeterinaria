@@ -12,7 +12,7 @@
             <li>
                 <asp:Label Text="Data" ID="label1" runat="server"></asp:Label>
                 <asp:TextBox ID="data_venda" Text="" CssClass="radiusInput" runat="server" 
-                    ReadOnly="True" OnTextChanged="data_venda_TextChanged"></asp:TextBox>
+                    ReadOnly="True"></asp:TextBox>
             </li>
             <li>
                 <asp:Label Text="Horário" ID="label2" runat="server"></asp:Label>
@@ -34,17 +34,29 @@
             <br />
             <h3>Produtos</h3>
         <ul>
-        <li>
-                <asp:Label Text="Produto" ID="label9" runat="server"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem Value="1">1 - Shampoo anti-pulga</asp:ListItem>
-                    <asp:ListItem Value="2">2 - Ração purina</asp:ListItem>
-                    <asp:ListItem Value="2">3 - Ração especial</asp:ListItem>
-                </asp:DropDownList>
+        <li style="display: block">
+                <asp:Label Text="Produto" ID="label6" runat="server"></asp:Label>
+                <asp:TextBox ID="cod_produto" Text="" CssClass="radiusInput" runat="server" 
+                    Width="70%"></asp:TextBox>
             </li>
-            <li>
-                <asp:Label Text="Quantidade" ID="label5" runat="server"></asp:Label>
-                <asp:TextBox ID="quantidade_prod" Text="" CssClass="radiusInput" runat="server"></asp:TextBox>
+            <li style="display: block; border: none">
+            <table id="tableProdutos">
+            <thead>
+            <tr>
+            <th>
+            Produto
+            </th>
+            <th>
+            Quantidade
+            </th>
+            <th>
+            Valor
+            </th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            </table>
             </li>
             <li>
                 <asp:Button ID="incluirItem" CssClass="btn btnAdd" runat="server" Text="Incluir" OnClick="incluirItem_Click" />
@@ -53,7 +65,37 @@
             </ul>
    </asp:Panel>
 
+   <script type="text/javascript">
+       jq(document).ready(function () {
+           jq("#cod_produto").focusout(function () {
+               //jq("#tableProdutos > tbody:last-child").append("<tr><td>AA</td><td>AA</td><td>AA</td></tr>");
+               jq.ajax({
+                   type: "POST",
+                   url: "NovaVenda.aspx/InserirProduto",
+                   data: '{codigo: "'+ this.value +'"}',
+                   contentType: "application/json: charset=utf-8",
+                   dataType: "json",
+                   success: blaa,
+                   failure: function (response) {
+                       alert(response.d);
+                   }
+               });
 
+               
+           });
+
+           function blaa() {
+               alert("blabla");
+               /*jq(jsonResult.d).each(function (index, val) {
+                   jq("#tableProdutos > tbody:lastchild").append(
+                       "<tr><td>" + val.Nome + "</td><td>" + val.Estoque + "</td><td>" + val.ValorReal + "</td></tr>"
+                   );
+               });*/
+           }
+       });
+
+       
+    </script>
  
    
 </asp:Content>

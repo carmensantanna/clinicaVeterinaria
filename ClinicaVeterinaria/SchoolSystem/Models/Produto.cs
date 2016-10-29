@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TI_ClinicaVeterinaria
 {
-    class Produto
+    public class Produto
     {
         private int codProduto;
         private string nome;
