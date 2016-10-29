@@ -11,6 +11,7 @@ namespace TI_ClinicaVeterinaria
     {
         private ControleCliente controleCliente;
         private ControlePet controlePet;
+        private ControleConsulta controleConsulta = new ControleConsulta();
         private Pet pet;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -57,6 +58,15 @@ namespace TI_ClinicaVeterinaria
         protected void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void carregaVet(object sender, EventArgs e)
+        {
+            int codVet = int.Parse(selectVet.Text);
+            List<Horarios> horarios = controleConsulta.ConsultaAgenda(codVet);
+            this.selectVet.DataSource = horarios;
+            this.selectVet.DataTextField = "DataTxt";
+            this.selectVet.DataValueField = "Codigo";
         }
     }
 }

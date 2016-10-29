@@ -13,22 +13,41 @@
             </li>
             <li>
                 <asp:Label Text="Veterinario" ID="label1" runat="server"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem Value="1">Marcio Ferreira</asp:ListItem>
-                    <asp:ListItem Value="2">José Antonio</asp:ListItem>
+                <asp:DropDownList ID="selectVet" runat="server" OnSelectedIndexChanged="carregaVet" BackColor="#EEEEEE">
+                    <asp:ListItem Value="1" Selected="True">José Carlos</asp:ListItem>
+                    <asp:ListItem Value="2">Wellinton Machado</asp:ListItem>
                 </asp:DropDownList>
             </li>        
             <li>
                 <asp:Label Text="Data da Consulta" ID="label3" runat="server">Data de Consulta</asp:Label>             
-                <input type="date" />
-            </li>         
+                
+                <asp:DropDownList ID="datasVet" runat="server" BackColor="#EEEEEE">
+                    <asp:ListItem Value="0">Selecione..</asp:ListItem>
+                    <asp:ListItem Value="1" Selected="True">29/10/2016</asp:ListItem>
+                    <asp:ListItem Value="2">31/10/2016</asp:ListItem>
+                    <asp:ListItem Value="3">03/11/2016</asp:ListItem>
+                    <asp:ListItem Value="4">04/11/2016</asp:ListItem>
+                </asp:DropDownList>
+                
+            </li>   
+            <!--                            
+            <li style="display: block">
+                <asp:Button ID="pesqHorarios" CssClass="btn btnAdd" runat="server" Text="Pesquisar Horário" />
+            </li>-->
             <li>
                 <asp:Label Text="Horários" ID="label2" runat="server"></asp:Label>             
-                  <input type="time" name="usr_time">
-            </li>                        
+                  
+                <asp:DropDownList ID="horariosVet" runat="server" BackColor="#EEEEEE">
+                    <asp:ListItem Value="1">Selecione..</asp:ListItem>
+                    <asp:ListItem Value="2" Selected="True">13:00</asp:ListItem>
+                </asp:DropDownList>
+                  
+            </li>  
+            <!--
             <li style="display: block">
-                <asp:Button ID="pesqCliente" CssClass="btn btnAdd" runat="server" Text="Pesquisar Horário" OnClick="pesqCliente_Click" />
+                <asp:Button ID="Button1" CssClass="btn btnAdd" runat="server" Text="Agendar Horário"  />
             </li>
+            -->
             </ul>
             <hr />
             <br />
@@ -49,10 +68,18 @@
             </li>
             </ul>
        
-       <asp:Button ID="peqClienteConsulta" CssClass="btn btnAdd" runat="server" Text="Pesquisar" OnClick="Button1_Click" />
+       <asp:Button ID="peqClienteConsulta" CssClass="btn btnAdd" runat="server" Text="Confirmar" OnClick="Button1_Click" />
    </asp:Panel>
 
+    <script type="text/javascript">
+        jq(document).ready(function () {
+            jq("#horariosVet").focusout(function () {
+                alert("Horário com diferença menor que 4 horas. Será necessário informar uma justificativa.");
+            });
+       });
 
+       
+    </script>
  
    
 </asp:Content>

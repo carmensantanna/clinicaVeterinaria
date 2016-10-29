@@ -45,6 +45,11 @@ namespace TI_ClinicaVeterinaria
             set { data = value; }
         }
 
+        public string DataTxt
+        {
+            get { return data.ToString(); }
+        }
+
         public Veterinario Veterinario
         {
             get { return veterinario; }

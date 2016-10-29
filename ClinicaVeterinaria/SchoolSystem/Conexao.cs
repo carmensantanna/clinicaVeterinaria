@@ -17,7 +17,7 @@ namespace TI_ClinicaVeterinaria
         public Conexao()
         {
             //Seta todos os dados necessários (servidor, usuário, senha e banco de dados)
-            this.conexaoBD = new MySqlConnection("server=localhost;database=clinicaveterinaria;uid=root;pwd='1234'");
+            this.conexaoBD = new MySqlConnection("server=localhost;database=test;uid=mysql;pwd=''");
         }
 
         //Abre a conexão no banco de dados

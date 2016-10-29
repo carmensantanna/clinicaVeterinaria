@@ -49,13 +49,13 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// selectVet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList selectVet;
         
         /// <summary>
         /// label3 control.
@@ -67,6 +67,24 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label3;
         
         /// <summary>
+        /// datasVet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList datasVet;
+        
+        /// <summary>
+        /// pesqHorarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button pesqHorarios;
+        
+        /// <summary>
         /// label2 control.
         /// </summary>
         /// <remarks>
@@ -76,13 +94,22 @@ namespace TI_ClinicaVeterinaria {
         protected global::System.Web.UI.WebControls.Label label2;
         
         /// <summary>
-        /// pesqCliente control.
+        /// horariosVet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button pesqCliente;
+        protected global::System.Web.UI.WebControls.DropDownList horariosVet;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// label16 control.

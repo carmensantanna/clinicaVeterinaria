@@ -83,3 +83,16 @@ C:\Users\Carmen\Documents\PUC\6o Sem\ClinicaVeterinaria_v4\ClinicaVeterinaria\Sc
 C:\Users\Carmen\Documents\PUC\6o Sem\ClinicaVeterinaria_v4\ClinicaVeterinaria\SchoolSystem\bin\MySql.Data.Entity.EF6.dll
 C:\Users\Carmen\Documents\PUC\6o Sem\ClinicaVeterinaria_v4\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.xml
 C:\Users\Carmen\Documents\PUC\6o Sem\ClinicaVeterinaria_v4\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.SqlServer.xml
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\obj\Debug\ClinicaVeterinaria.csprojResolveAssemblyReference.cache
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.dll
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\obj\Debug\SchoolSystem.pdb
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\SchoolSystem.dll.config
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\SchoolSystem.dll
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\SchoolSystem.pdb
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\AjaxControlToolkit.dll
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.dll
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.SqlServer.dll
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\MySql.Data.dll
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\MySql.Data.Entity.EF6.dll
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.xml
+C:\temp\trab\ClinicaVeterinaria\SchoolSystem\bin\EntityFramework.SqlServer.xml

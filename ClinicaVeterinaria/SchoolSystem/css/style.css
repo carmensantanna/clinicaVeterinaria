@@ -19,9 +19,13 @@ body {
 }
 
 /*begin header*/
-.header {
+/*.header {
     width: 1000px;
     height: 205px;
+}*/
+.header {
+    width: 100%;
+    height: 100px;
 }
 
     .header img {
